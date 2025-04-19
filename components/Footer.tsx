@@ -4,6 +4,7 @@ import {
   BsInstagram,
   BsFacebook,
 } from 'react-icons/bs';
+import { Logo } from './Logo';
 
 const navigation = {
   company: [
@@ -47,11 +48,7 @@ export default function Footer() {
       <div className="mx-auto max-w-7xl px-6 py-24 sm:px-6 sm:py-32 lg:px-8 lg:py-24">
         <div className="xl:grid xl:grid-cols-3 xl:gap-8">
           <div className="space-y-8">
-            <img
-              alt="Chima Ugbaja E."
-              src="/chimex-logo.png"
-              className="h-12" // Change to your logo's height
-            />
+            <Logo />
             <p className="text-sm text-gray-600">
               Leading WhatsApp marketing and audience growth expert. Helping entrepreneurs grow and monetize their WhatsApp audience.
             </p>
