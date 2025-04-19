@@ -4,28 +4,7 @@ import { motion } from 'framer-motion';
 import Carousel from './Carousel';
 import { Container } from './Container';
 
-const images = [
-  {
-    src: "/images/slide1.jpg",
-    alt: "Mountain Landscape"
-  },
-  {
-    src: "/images/slide2.jpg",
-    alt: "Sunset by the Beach"
-  },
-  {
-    src: "/images/slide3.jpg",
-    alt: "Forest Path"
-  },
-  {
-    src: "/images/slide4.jpg",
-    alt: "Northern Lights"
-  },
-  {
-    src: "/images/slide5.jpg",
-    alt: "Tropical Island"
-  }
-];
+
 
 // Additional images for the second carousel
 const resultImages = [
@@ -78,7 +57,7 @@ export default function TestimonialsAndResults() {
             animate={{ opacity: 1 }}
             transition={{ duration: 0.6 }}
           >
-            <Carousel images={images} />
+            <Carousel images={resultImages} />
           </motion.div>
 
           {/* Testimonials */}
