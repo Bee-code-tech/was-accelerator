@@ -41,7 +41,7 @@ const testimonials = [
 export default function TestimonialsAndResults() {
   return (
     <Container> 
-          <div className="py-16 px-6 bg-white">
+          <div className="py-12 bg-white">
       {/* Section Title */}
       <motion.div className="text-center mb-12">
         <h2 className="text-4xl font-semibold text-gray-900">What People Are Saying & Results</h2>

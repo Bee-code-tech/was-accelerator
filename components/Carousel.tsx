@@ -86,7 +86,7 @@ const Carousel: React.FC<CarouselProps> = ({
 
   return (
     <div
-      className="relative w-full max-w-5xl mx-auto overflow-hidden rounded-xl shadow-lg h-[500px]"
+      className="relative w-full max-w-5xl mx-auto overflow-hidden rounded-xl shadow-lg h-[550px]"
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
     >
@@ -107,7 +107,7 @@ const Carousel: React.FC<CarouselProps> = ({
             fill
             sizes="(max-width: 1024px) 100vw, 1024px"
             priority={currentIndex === 0}
-            className="object-cover"
+            className="object-cover w-full"
           />
           <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/30" />
           <div className="absolute bottom-0 left-0 w-full p-6 text-white">
