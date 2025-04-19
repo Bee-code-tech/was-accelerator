@@ -8,12 +8,16 @@ import Footer from '@/components/Footer'
 
 export const metadata: Metadata = {
   title: {
-    template: '%s - TaxPal',
-    default: 'TaxPal - Accounting made simple for small businesses',
+    template: '%s - Chimex Sub',
+    default: 'Chimex Sub - WhatsApp Audience Growth & Monetization with Chima Ugbaja',
   },
   description:
-    'Most bookkeeping software is accurate, but hard to use. We make the opposite trade-off, and hope you don’t get audited.',
-}
+    'Learn how to grow your WhatsApp audience to 2,000+ views in 30 days, monetize your audience, and build a profitable WhatsApp business with the proven strategies from Chima Ugbaja at Chimex Sub.',
+  keywords: 'WhatsApp growth, audience building, monetization, marketing, Chimex Sub, Chima Ugbaja, online marketing, small business, WhatsApp marketing',
+  authors: { name: 'Chima Ugbaja' },
+  robots: 'index, follow',
+};
+
 
 const inter = Inter({
   subsets: ['latin'],
