@@ -1,100 +1,139 @@
-'use client'
+ 'use client'
+
 import { motion } from 'framer-motion';
-import { Carousel } from './Carousel';
+import Carousel from './Carousel';
+import { Container } from './Container';
 
-// Testimonial and Result Data
+const images = [
+  {
+    src: "/images/slide1.jpg",
+    alt: "Mountain Landscape"
+  },
+  {
+    src: "/images/slide2.jpg",
+    alt: "Sunset by the Beach"
+  },
+  {
+    src: "/images/slide3.jpg",
+    alt: "Forest Path"
+  },
+  {
+    src: "/images/slide4.jpg",
+    alt: "Northern Lights"
+  },
+  {
+    src: "/images/slide5.jpg",
+    alt: "Tropical Island"
+  }
+];
+
+// Additional images for the second carousel
+const resultImages = [
+  {
+    src: "/result1.jpg",
+    alt: "Massive Result"
+  },
+  {
+    src: "/result2.jpg",
+    alt: "Client Success Story 2"
+  },
+ 
+];
+
 const testimonials = [
-  {
-    name: 'John Doe',
-    image: '/path-to-image1.jpg',
-    quote: 'This is an amazing strategy that helped me increase my WhatsApp audience rapidly!',
+     {
+    src: "/testi.jpg",
+    alt: "Client Success Story 3"
   },
   {
-    name: 'Jane Smith',
-    image: '/path-to-image2.jpg',
-    quote: 'I went from 0 to 2000 views in less than a month. Highly recommend this blueprint.',
-  },
-  // Add more testimonials
-];
-
-const results = [
-  {
-    result: 'Achieved 2000+ views in 30 days',
-    image: '/path-to-result-image1.jpg',
+    src: "/testi2.jpg",
+    alt: "Client Success Story 4"
   },
   {
-    result: 'Earned 230k+ monthly with WhatsApp marketing',
-    image: '/path-to-result-image2.jpg',
+    src: "/testi3.jpg",
+    alt: "Client Success Story 5"
   },
-  // Add more results
-];
+  {
+    src: "/testi4.jpg",
+    alt: "Client Success Story 5"
+  }
+]
 
 export default function TestimonialsAndResults() {
   return (
-    <div className="py-16 px-6 bg-white">
+    <Container> 
+          <div className="py-16 px-6 bg-white">
       {/* Section Title */}
       <motion.div className="text-center mb-12">
         <h2 className="text-4xl font-semibold text-gray-900">What People Are Saying & Results</h2>
       </motion.div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-        {/* Testimonials Section */}
-        <div className="space-y-6">
+      {/* Row 1: Testimonials - Carousel on left on desktop, on top on mobile */}
+      <div className="mb-16">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+          {/* Carousel - Always appears first in the DOM for mobile priority */}
           <motion.div
-            className="text-left"
+            className="order-1 lg:order-1" // First on mobile and desktop
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.6 }}
           >
-            <h3 className="text-xl font-bold text-gray-800">What People Are Saying</h3>
-            <ul className="list-disc pl-5 space-y-2 text-gray-600">
+            <Carousel images={images} />
+          </motion.div>
+
+          {/* Testimonials */}
+          <motion.div
+            className="order-2 lg:order-2" // Second on mobile and desktop
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+          >
+            <h3 className="text-2xl font-bold text-gray-800 mb-4">What People Are Saying</h3>
+            <ul className="list-disc pl-5 space-y-3 text-gray-700">
               <li>"This strategy changed my business, I saw amazing results in no time!"</li>
               <li>"The best thing about this program is its simplicity and effectiveness."</li>
               <li>"The mentorship provided is invaluable, always available to answer my questions."</li>
               <li>"I highly recommend this to anyone looking to grow their WhatsApp business."</li>
-              {/* Add more testimonials as bullet points */}
+              <li>"Since implementing these strategies, my customer engagement has doubled."</li>
+              <li>"Worth every penny! The ROI has been incredible for my small business."</li>
             </ul>
           </motion.div>
-
-          <motion.div
-            className="space-y-6"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-          >
-            <Carousel items={testimonials} />
-          </motion.div>
         </div>
+      </div>
 
-        {/* Results Section */}
-        <div className="space-y-6">
+      {/* Row 2: Results - Carousel on right on desktop, on top on mobile */}
+      <div>
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+          {/* Results Carousel - Always appears first in the DOM for mobile priority */}
           <motion.div
-            className="text-left"
+            className="order-1 lg:order-2" // First on mobile, second on desktop (swapped)
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.6 }}
           >
-            <h3 className="text-xl font-bold text-gray-800">Results Achieved</h3>
-            <ul className="list-disc pl-5 space-y-2 text-gray-600">
-              <li>Achieved 2000+ WhatsApp views in just 30 days!</li>
-              <li>Earned over 230k+ monthly from WhatsApp marketing.</li>
-              <li>Successfully grew a large and engaged audience without paid ads.</li>
-              <li>Mastered WhatsApp copywriting and automation to maximize sales.</li>
-              {/* Add more results as bullet points */}
-            </ul>
+            <Carousel images={testimonials} />
           </motion.div>
 
+          {/* Results Text */}
           <motion.div
-            className="space-y-6"
+            className="order-2 lg:order-1" // Second on mobile, first on desktop (swapped)
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            {/* The carousel now will have results with images */}
-            <Carousel items={results} isResult />
+            <h3 className="text-2xl font-bold text-gray-800 mb-4">Results Achieved</h3>
+            <ul className="list-disc pl-5 space-y-3 text-gray-700">
+              <li>Achieved 2000+ WhatsApp views in just 30 days!</li>
+              <li>Earned over 230k+ monthly from WhatsApp marketing.</li>
+              <li>Successfully grew a large and engaged audience without paid ads.</li>
+              <li>Mastered WhatsApp copywriting and automation to maximize sales.</li>
+              <li>Increased conversion rates by 45% through optimized messaging.</li>
+              <li>Reduced customer response time by 75% with automated workflows.</li>
+            </ul>
           </motion.div>
         </div>
       </div>
     </div>
+    </Container>
   );
 }
