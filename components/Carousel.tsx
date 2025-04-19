@@ -1,3 +1,4 @@
+'use client'
 import React from 'react';
 
 interface CarouselItem {
@@ -12,7 +13,7 @@ interface CarouselProps {
   isResult?: boolean;
 }
 
-const Carousel: React.FC<CarouselProps> = ({ items, isResult = false }) => {
+export const Carousel: React.FC<CarouselProps> = ({ items, isResult = false }) => {
   return (
     <div className={`carousel-container ${isResult ? 'carousel-results' : 'carousel-testimonials'}`}>
       {/* Map over the items and display them */}
@@ -37,3 +38,5 @@ const Carousel: React.FC<CarouselProps> = ({ items, isResult = false }) => {
     </div>
   );
 };
+
+

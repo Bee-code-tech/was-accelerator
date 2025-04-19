@@ -3,6 +3,8 @@ import BioSection from "@/components/BioSection";
 import FAQSection from "@/components/FAQSection";
 import Hero  from "@/components/Hero";
 import MasterclassCTA from "@/components/MasterClassCTA";
+import TestimonialsAndResults from "@/components/TestimonialsAndResults";
+import VideoProofSection from "@/components/VideoProofSection";
 
 export default function Home() {
   return (
@@ -10,6 +12,8 @@ export default function Home() {
       <Hero />
       <BioSection />
       <AudienceAcceleratorBlueprint />
+      <VideoProofSection />
+      <TestimonialsAndResults />
       <FAQSection />
       <MasterclassCTA />
     </>
