@@ -11,9 +11,9 @@ export default function Home() {
     <>
       <Hero />
       <BioSection />
+      <TestimonialsAndResults />
       <AudienceAcceleratorBlueprint />
       <VideoProofSection />
-      <TestimonialsAndResults />
       <FAQSection />
       <MasterclassCTA />
     </>

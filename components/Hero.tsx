@@ -89,7 +89,7 @@ const Hero = () => {
       </motion.p>
 
       {/* Buttons */}
-      <motion.div
+      {/* <motion.div
         variants={heroVariants}
         initial="hidden"
         animate="visible"
@@ -104,10 +104,10 @@ const Hero = () => {
           <User2 className="text-md" />
           <span className="ml-2">About Us</span>
         </Button>
-      </motion.div>
+      </motion.div> */}
 
       {/* Countdown Timer */}
-      <motion.div
+      {/* <motion.div
         variants={heroVariants}
         initial="hidden"
         animate="visible"
@@ -133,7 +133,7 @@ const Hero = () => {
             <div className="text-lg">Seconds</div>
           </div>
         </div>
-      </motion.div>
+      </motion.div> */}
     </Container>
   );
 };
