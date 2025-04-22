@@ -26,7 +26,7 @@ const faqs = [
 
 export default function FAQSection() {
   return (
-    <div className="bg-white">
+    <div className="bg-white" id='faq'>
       <div className="mx-auto max-w-7xl px-6 py-12 sm:py-32 lg:px-8 lg:py-40">
         <div className="mx-auto max-w-4xl">
           <h2 className="lg:text-4xl text-2xl font-semibold tracking-tight text-gray-900 sm:text-5xl">

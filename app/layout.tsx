@@ -5,6 +5,7 @@ import clsx from 'clsx'
 import './globals.css'
 import { Header } from '@/components/Header'
 import Footer from '@/components/Footer'
+import ScrollToTop from '@/components/ScrollToTop'
 
 export const metadata: Metadata = {
   title: {
@@ -48,6 +49,7 @@ export default function RootLayout({
       <body className="flex h-full flex-col">
         <Header />
         {children}
+        <ScrollToTop />
         <Footer />
       </body>
     </html>

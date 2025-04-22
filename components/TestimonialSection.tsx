@@ -34,7 +34,7 @@ const itemVariants = {
 export default function TestimonialSection() {
   return (
     <Container> 
-          <div className="py-12 bg-white">
+          <div className="py-12 bg-white" id='testimonials'>
       {/* Section Title */}
       {/* <motion.div className="text-center mb-12">
         <h2 className="text-4xl font-semibold text-gray-900">What People Are Saying & Results</h2>

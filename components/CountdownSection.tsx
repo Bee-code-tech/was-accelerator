@@ -90,7 +90,7 @@ const CountdownSection = () => {
   const showDays = timeRemaining.days > 0;
 
   return (
-    <div className="py-10 md:py-16">
+    <div className="py-10 md:py-16" id='offers'>
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div 
           initial={{ opacity: 0, y: 20 }}

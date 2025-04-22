@@ -77,6 +77,10 @@ export default function VideoProofSection() {
                 width="100%"
                 height="auto"
                 controls
+                playsInline
+                  autoPlay
+                  muted
+                  loop
               >
                 <source src="/vid.mp4" type="video/mp4" />
                 Your browser does not support the video tag.

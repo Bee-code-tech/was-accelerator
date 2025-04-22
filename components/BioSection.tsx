@@ -14,7 +14,7 @@ const bioVariants = {
 
 const BioSection = () => {
   return (
-    <Container className="pt-20 pb-16 text-center lg:pt-32 relative">
+    <Container className="pt-20 pb-16 text-center lg:pt-32 relative" id='about'>
       <Headline title='Meet Your Instructor' />
       
       {/* Bio Section */}

@@ -50,7 +50,7 @@ const itemVariants = {
 
 export default function AudienceAcceleratorBlueprint() {
   return (
-    <div className="bg-white py-14 sm:py-32">
+    <div className="bg-white py-14 sm:py-32" id='outline'>
       <motion.div
         initial="hidden"
         whileInView="show"
