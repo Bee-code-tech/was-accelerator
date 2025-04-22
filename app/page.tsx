@@ -1,5 +1,6 @@
 import AudienceAcceleratorBlueprint from "@/components/AudienceAcceleratorBlueprint";
 import BioSection from "@/components/BioSection";
+import CountdownSection from "@/components/CountdownSection";
 import FAQSection from "@/components/FAQSection";
 import Hero  from "@/components/Hero";
 import Learn from "@/components/Learn";
@@ -18,6 +19,7 @@ export default function Home() {
       <AudienceAcceleratorBlueprint />
       <Learn />
       <TestimonialSection />
+      <CountdownSection />
       <FAQSection />
       <MasterclassCTA />
     </>
