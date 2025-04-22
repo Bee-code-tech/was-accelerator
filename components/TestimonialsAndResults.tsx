@@ -14,7 +14,7 @@ const resultImages = [
   },
   {
     src: "/result2.jpg",
-    alt: "Client Success Story 2"
+    alt: "Massive Audience"
   },
  
 ];
@@ -38,14 +38,29 @@ const testimonials = [
   }
 ]
 
+const itemVariants = {
+  hidden: { opacity: 0, y: 30 },
+  show: { opacity: 1, y: 0, transition: { duration: 0.6, ease: 'easeOut' } },
+}
+
 export default function TestimonialsAndResults() {
   return (
     <Container> 
           <div className="py-12 bg-white">
       {/* Section Title */}
-      <motion.div className="text-center mb-12">
+      {/* <motion.div className="text-center mb-12">
         <h2 className="text-4xl font-semibold text-gray-900">What People Are Saying & Results</h2>
-      </motion.div>
+      </motion.div> */}
+         <motion.div
+                  variants={itemVariants}
+                  className="mx-auto max-w-2xl text-center mb-8"
+                >
+                  <h2 className="text-base font-semibold text-blue-600">Results Achieved</h2>
+                  <p className="mt-2 text-2xl lg:text-4xl font-semibold tracking-tight text-pretty text-gray-900 sm:text-5xl lg:text-balance">
+                    Amazing Results in Just 30 Days!
+                  </p>
+                
+                </motion.div>
 
         
          {/* Row 2: Results - Carousel on right on desktop, on top on mobile */}
@@ -58,7 +73,7 @@ export default function TestimonialsAndResults() {
             animate={{ opacity: 1 }}
             transition={{ duration: 0.6 }}
           >
-            <Carousel images={testimonials} />
+            <Carousel images={resultImages} />
           </motion.div>
 
           {/* Results Text */}
@@ -68,12 +83,11 @@ export default function TestimonialsAndResults() {
             animate={{ opacity: 1 }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            <h3 className="text-2xl font-bold text-gray-800 mb-4">Results Achieved</h3>
+            {/* <h3 className="text-2xl font-bold text-gray-800 mb-4">Results Achieved</h3> */}
             <ul className="list-disc pl-5 space-y-3 text-gray-700">
-              <li>Achieved 2000+ WhatsApp views in just 30 days!</li>
-              <li>Earned over 230k+ monthly from WhatsApp marketing.</li>
-              <li>Successfully grew a large and engaged audience without paid ads.</li>
-              <li>Mastered WhatsApp copywriting and automation to maximize sales.</li>
+              <li>22k JAMBites in one month</li>
+              <li>10k channel followers</li>
+              <li>6k channel followers</li>
               <li>Increased conversion rates by 45% through optimized messaging.</li>
               <li>Reduced customer response time by 75% with automated workflows.</li>
             </ul>
@@ -81,40 +95,43 @@ export default function TestimonialsAndResults() {
         </div>
       </div>
 
-      {/* Row 1: Testimonials - Carousel on left on desktop, on top on mobile */}
-      <div className="mb-16">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
-          <motion.div
-            className="order-1 lg:order-1" 
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.6 }}
-          >
-            <Carousel images={resultImages} />
-          </motion.div>
-
-          {/* Testimonials */}
-          <motion.div
-            className="order-2 lg:order-2" // Second on mobile and desktop
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-          >
-            <h3 className="text-2xl font-bold text-gray-800 mb-4">What People Are Saying</h3>
-            <ul className="list-disc pl-5 space-y-3 text-gray-700">
-              <li>"This strategy changed my business, I saw amazing results in no time!"</li>
-              <li>"The best thing about this program is its simplicity and effectiveness."</li>
-              <li>"The mentorship provided is invaluable, always available to answer my questions."</li>
-              <li>"I highly recommend this to anyone looking to grow their WhatsApp business."</li>
-              <li>"Since implementing these strategies, my customer engagement has doubled."</li>
-              <li>"Worth every penny! The ROI has been incredible for my small business."</li>
-            </ul>
-          </motion.div>
-        </div>
-      </div>
+    
 
      
     </div>
     </Container>
   );
 }
+
+
+  {/* Row 1: Testimonials - Carousel on left on desktop, on top on mobile */}
+      // <div className="mb-16">
+      //   <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+      //     <motion.div
+      //       className="order-1 lg:order-1" 
+      //       initial={{ opacity: 0 }}
+      //       animate={{ opacity: 1 }}
+      //       transition={{ duration: 0.6 }}
+      //     >
+      //       <Carousel images={resultImages} />
+      //     </motion.div>
+
+      //     {/* Testimonials */}
+      //     <motion.div
+      //       className="order-2 lg:order-2" // Second on mobile and desktop
+      //       initial={{ opacity: 0 }}
+      //       animate={{ opacity: 1 }}
+      //       transition={{ duration: 0.6, delay: 0.2 }}
+      //     >
+      //       <h3 className="text-2xl font-bold text-gray-800 mb-4">What People Are Saying</h3>
+      //       <ul className="list-disc pl-5 space-y-3 text-gray-700">
+      //         <li>"This strategy changed my business, I saw amazing results in no time!"</li>
+      //         <li>"The best thing about this program is its simplicity and effectiveness."</li>
+      //         <li>"The mentorship provided is invaluable, always available to answer my questions."</li>
+      //         <li>"I highly recommend this to anyone looking to grow their WhatsApp business."</li>
+      //         <li>"Since implementing these strategies, my customer engagement has doubled."</li>
+      //         <li>"Worth every penny! The ROI has been incredible for my small business."</li>
+      //       </ul>
+      //     </motion.div>
+      //   </div>
+      // </div>

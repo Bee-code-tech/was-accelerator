@@ -34,7 +34,7 @@ export default function VideoProofSection() {
               transition={{ duration: 0.6 }}
               className="lg:max-w-lg"
             >
-              <h2 className="text-base font-semibold text-blue-600">Video Proof: How It Works</h2>
+              <h2 className="text-base font-semibold text-blue-600">Audience Statistics in 6 Months</h2>
               <p className="mt-2 text-4xl font-semibold tracking-tight text-pretty text-gray-900 sm:text-5xl">
                 Watch the Results in Action
               </p>

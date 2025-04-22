@@ -2,8 +2,10 @@ import AudienceAcceleratorBlueprint from "@/components/AudienceAcceleratorBluepr
 import BioSection from "@/components/BioSection";
 import FAQSection from "@/components/FAQSection";
 import Hero  from "@/components/Hero";
+import Learn from "@/components/Learn";
 import MasterclassCTA from "@/components/MasterClassCTA";
 import TestimonialsAndResults from "@/components/TestimonialsAndResults";
+import TestimonialSection from "@/components/TestimonialSection";
 import VideoProofSection from "@/components/VideoProofSection";
 
 export default function Home() {
@@ -12,8 +14,10 @@ export default function Home() {
       <Hero />
       <BioSection />
       <TestimonialsAndResults />
-      <AudienceAcceleratorBlueprint />
       <VideoProofSection />
+      <AudienceAcceleratorBlueprint />
+      <Learn />
+      <TestimonialSection />
       <FAQSection />
       <MasterclassCTA />
     </>
