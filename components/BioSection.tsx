@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import { Container } from '@/components/Container';
 import { BsLinkedin, BsTwitter, BsInstagram, BsWhatsapp, BsFacebook } from 'react-icons/bs';
 import Image from 'next/image'; 
-import { useState } from 'react';
+
 import Headline from './Headline';
 
 // Animation Variants for Framer Motion
