@@ -6,6 +6,19 @@ import {
   SparklesIcon,
 } from '@heroicons/react/24/outline'
 import { motion } from 'framer-motion'
+import Carousel from './Carousel'
+
+const resultImages = [
+  {
+    src: "/was.jpg",
+    alt: "N-WAAM Blueprint"
+  },
+  {
+    src: "/bonus1.jpg",
+    alt: "Fast Action Bonuses"
+  },
+ 
+];
 
 const features = [
   {
@@ -15,7 +28,7 @@ const features = [
     icon: ChartBarIcon,
   },
   {
-    name: 'Monetization Blueprint',
+    name: 'Blueprint Monetization',
     description:
       'Learn exactly how to monetize your audience and make over 230k monthly with your WhatsApp—using simple but effective marketing tricks.',
     icon: CurrencyDollarIcon,
@@ -90,6 +103,10 @@ export default function AudienceAcceleratorBlueprint() {
             </motion.div>
           ))}
         </motion.dl>
+
+        <div className='mt-14' >
+          <Carousel images={resultImages} />
+        </div>
       </motion.div>
     </div>
   )

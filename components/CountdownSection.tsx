@@ -16,11 +16,9 @@ const CountdownSection = () => {
   // Set your offer details here
   const originalPrice = "₦10,000";
   const discountedPrice = "₦5,000";
-  // Set the end date (adjust as needed for testing)
-  // Using a ref to avoid re-renders
-  const endDateRef = useRef(new Date(Date.now() + 3 * 24 * 60 * 60 * 1000).toISOString()); // 3 days from now
+  const endDateRef = useRef(new Date(Date.now() + 3 * 24 * 60 * 60 * 1000).toISOString()); 
   const buttonText = "Reserve Your Spot Now";
-  const buttonLink = "/payment"; // Change to your payment page link
+  const buttonLink = "https://wa.link/ltfzo8"; 
 
   // Time remaining state
   const [timeRemaining, setTimeRemaining] = useState<TimeRemaining>({

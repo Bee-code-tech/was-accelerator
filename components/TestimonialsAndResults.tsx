@@ -10,11 +10,15 @@ import { Container } from './Container';
 const resultImages = [
   {
     src: "/result1.jpg",
-    alt: "Massive Result"
+    alt: "22k JAMBites in one month "
   },
   {
     src: "/result2.jpg",
-    alt: "Massive Audience"
+    alt: "10k Scholars in 6 months"
+  },
+  {
+    src: "/result3.jpg",
+    alt: "6k followers in 6 months"
   },
  
 ];
@@ -46,7 +50,7 @@ const itemVariants = {
 export default function TestimonialsAndResults() {
   return (
     <Container id='results' > 
-          <div className="py-12 bg-white">
+          <div className="pb-12 pt-4 bg-white">
       {/* Section Title */}
       {/* <motion.div className="text-center mb-12">
         <h2 className="text-4xl font-semibold text-gray-900">What People Are Saying & Results</h2>

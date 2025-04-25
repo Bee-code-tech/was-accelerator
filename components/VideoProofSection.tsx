@@ -23,22 +23,22 @@ const features = [
 
 export default function VideoProofSection() {
   return (
-    <div className="bg-white py-24 sm:py-32">
+    <div className="bg-white py-6 sm:py-32">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
-        <div className="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 sm:gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-2">
+        <div className="mx-auto items-center justify-center w-full flex max-w-2xl flex-col gap-x-8 gap-y-16 sm:gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-2">
           {/* Left Content Section */}
-          <div className="lg:ml-auto lg:pt-4 lg:pl-4">
+          <div className=" lg:pt-4 lg:pl-4 mx-auto flex justify-center items-center flex-col w-full">
             <motion.div
               whileInView={{ opacity: 1 }}
               initial={{ opacity: 0 }}
               transition={{ duration: 0.6 }}
               className="lg:max-w-lg"
             >
-              <h2 className="text-base font-semibold text-blue-600">Audience Statistics in 6 Months</h2>
-              <p className="mt-2 text-4xl font-semibold tracking-tight text-pretty text-gray-900 sm:text-5xl">
+              <h2 className="text-center font-semibold text-blue-600">Audience Statistics in 6 Months</h2>
+              <p className="mt-2 text-3xl font-semibold tracking-tight text-pretty text-gray-900 lg:text-3xl">
                 Watch the Results in Action
               </p>
-              <p className="mt-6 text-lg text-gray-600">
+              {/* <p className="mt-6 text-lg text-gray-600">
                 Watch the real proof of how WhatsApp marketers are achieving rapid growth and massive revenue through simple yet powerful strategies.
               </p>
               <dl className="mt-10 max-w-xl space-y-8 text-base text-gray-600 lg:max-w-none">
@@ -60,12 +60,12 @@ export default function VideoProofSection() {
                     <dd className="inline">{feature.description}</dd>
                   </motion.div>
                 ))}
-              </dl>
+              </dl> */}
             </motion.div>
           </div>
 
           {/* Video Section */}
-          <div className="flex items-start justify-end lg:order-first">
+          <div className="flex items-start justify-end ">
             <motion.div
               whileInView={{ opacity: 1, x: 0 }}
               initial={{ opacity: 0, x: -100 }}

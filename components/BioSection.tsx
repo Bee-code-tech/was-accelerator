@@ -1,7 +1,7 @@
 'use client'
 import { motion } from 'framer-motion';
 import { Container } from '@/components/Container';
-import { BsLinkedin, BsTwitter, BsInstagram } from 'react-icons/bs';
+import { BsLinkedin, BsTwitter, BsInstagram, BsWhatsapp, BsFacebook } from 'react-icons/bs';
 import Image from 'next/image'; 
 import { useState } from 'react';
 import Headline from './Headline';
@@ -14,7 +14,7 @@ const bioVariants = {
 
 const BioSection = () => {
   return (
-    <Container className="pt-20 pb-16 text-center lg:pt-32 relative" id='about'>
+    <Container className=" pb-16 text-center lg:pt-32 relative" id='about'>
       <Headline title='Meet Your Instructor' />
       
       {/* Bio Section */}
@@ -47,13 +47,13 @@ const BioSection = () => {
 
           {/* Social Links */}
           <div className="flex gap-4 mt-4 items-center justify-center lg:justify-start">
-            <a href="https://www.linkedin.com/in/chimaugbaja" target="_blank" className="text-blue-600">
-              <BsLinkedin size={24} />
+            <a href="https://whatsapp.com/channel/0029Vaj6EiFKAwEekrenp82k" target="_blank" className="text-blue-600">
+              <BsWhatsapp size={24} />
             </a>
-            <a href="https://twitter.com/chimaugbaja" target="_blank" className="text-blue-600">
-              <BsTwitter size={24} />
+            <a href="https://www.facebook.com/share/1BPRfdSU7S/?mibextid=wwXIfr" target="_blank" className="text-blue-600">
+              <BsFacebook size={24} />
             </a>
-            <a href="https://www.instagram.com/chimaugbaja" target="_blank" className="text-blue-600">
+            <a href="https://www.instagram.com/chimexsub11?igsh=MXB0bmV4OGowY2tpNw%3D%3D&utm_source=qr" target="_blank" className="text-blue-600">
               <BsInstagram size={24} />
             </a>
           </div>

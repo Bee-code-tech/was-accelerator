@@ -2,12 +2,9 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import { FaCertificate } from 'react-icons/fa';
 import {
   GlobeAltIcon,
-  CurrencyDollarIcon,
   UserGroupIcon,
-  ChartBarIcon,
   DocumentTextIcon,
   CogIcon,
   PresentationChartLineIcon,
@@ -17,11 +14,6 @@ import {
 } from '@heroicons/react/24/outline';
 
 const learningPoints = [
-  {
-    name: 'Seven-Figure Income Blueprint',
-    description: 'Unlock the proven methods to generate at least 7 figures monthly through strategic WhatsApp monetization.',
-    icon: CurrencyDollarIcon,
-  },
   {
     name: 'WhatsApp Marketing Mastery',
     description: 'Comprehensive breakdown of WhatsApp marketing and how to successfully launch profitable online courses.',
@@ -48,19 +40,9 @@ const learningPoints = [
     icon: PresentationChartLineIcon,
   },
   {
-    name: 'Copywriting & Content Marketing',
-    description: 'Write compelling copy that turns viewers into buyers and create content that keeps your audience engaged.',
-    icon: UserGroupIcon,
-  },
-  {
     name: 'WhatsApp Automation',
     description: 'Set up systems to automatically reply to frequent chats, saving time while maintaining customer relationships.',
     icon: CogIcon,
-  },
-  {
-    name: 'Global Payment Solutions',
-    description: 'Receive payments seamlessly from anywhere in the world without complicated processes or restrictions.',
-    icon: BellAlertIcon,
   },
 ];
 
@@ -80,7 +62,7 @@ const itemVariants = {
 
 const Learn = () => {
   return (
-    <div className="bg-white py-16">
+    <div className="bg-white pb-16 ">
       <motion.div
         initial="hidden"
         whileInView="show"
