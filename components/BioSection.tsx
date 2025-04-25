@@ -22,7 +22,7 @@ const BioSection = () => {
         variants={bioVariants}
         initial="hidden"
         whileInView="visible"
-        viewport={{ once: true, amount: 0.2 }} // Trigger when section enters the viewport
+        viewport={{ once: true, amount: 0.2 }} 
         className="flex flex-col lg:flex-row items-center justify-between gap-10"
       >
         {/* Left Side - Client Image */}
