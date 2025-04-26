@@ -24,7 +24,7 @@ const features = [
   {
     name: 'Rapid Audience Growth',
     description:
-      'Grow your WhatsApp audience to 2,000+ status views in under 30 days using powerful organic strategies—no referrals or contact gain needed.',
+      'Grow your WhatsApp audience to 2,000+ status views  under 30 days using powerful organic strategies—no referrals or contact gain needed.',
     icon: ChartBarIcon,
   },
   {
