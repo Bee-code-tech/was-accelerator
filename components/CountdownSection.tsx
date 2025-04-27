@@ -16,7 +16,7 @@ const CountdownSection = () => {
   // Set your offer details here
   const originalPrice = "₦10,000";
   const discountedPrice = "₦5,000";
-  const endDateRef = useRef(new Date(Date.now() + 3 * 24 * 60 * 60 * 1000).toISOString()); 
+  const endDateRef = useRef(new Date(Date.now() + 24 * 60 * 60 * 1000).toISOString()); 
   const buttonText = "Reserve Your Spot Now";
   const buttonLink = "https://wa.link/ltfzo8"; 
 
