@@ -45,7 +45,7 @@ export default function TestimonialSection() {
                 >
                   <h2 className="text-base font-semibold text-blue-600">What people are saying</h2>
                   <p className="mt-2 text-2xl lg:text-4xl font-semibold tracking-tight text-pretty text-gray-900 sm:text-5xl lg:text-balance">
-                    Testimonial reviews from our clients
+                    Testimonials From Past Clients
                   </p>
                 
                 </motion.div>
@@ -71,12 +71,11 @@ export default function TestimonialSection() {
           >
             <h3 className="text-2xl font-bold text-gray-800 mb-4">What People Are Saying</h3>
             <ul className="list-disc pl-5 space-y-3 text-gray-700">
-              <li>"This strategy changed my business, I saw amazing results in no time!"</li>
-              <li>"The best thing about this program is its simplicity and effectiveness."</li>
-              <li>"The mentorship provided is invaluable, always available to answer my questions."</li>
-              <li>"I highly recommend this to anyone looking to grow their WhatsApp business."</li>
-              <li>"Since implementing these strategies, my customer engagement has doubled."</li>
-              <li>"Worth every penny! The ROI has been incredible for my small business."</li>
+              <li>Precious moved from 80 - 1500+ status views in just two weeks after implementing the N-WAAM strategy.</li>
+              <li>Caleb was delighted with how easy the lessons were to follow and how quickly he began to implement them.</li>
+              <li>Coach Nuel was inspired to share his success story after completing the program and seeing noticeable improvement.</li>
+              <li>Josh said the course <b>“worked like magic”</b> after he implemented the N-WAAM strategy.</li>
+              <li>All the testimonials are displayed on the flyer as shown above, many more...</li>
             </ul>
           </motion.div>
         </div>
@@ -85,7 +84,7 @@ export default function TestimonialSection() {
     
 
      
-    </div>
+    </div>"
     </Container>
   );
 }

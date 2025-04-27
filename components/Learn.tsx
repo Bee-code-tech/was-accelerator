@@ -74,9 +74,9 @@ const Learn = () => {
                         variants={itemVariants}
                         className="mx-auto max-w-2xl lg:text-center"
                       >
-                        <h2 className="text-base font-semibold text-blue-600">Course Outline</h2>
+                        <h2 className="text-base font-semibold text-blue-600">Course Bonuses</h2>
                         <p className="mt-2 text-2xl lg:text-4xl font-semibold tracking-tight text-pretty text-gray-900 sm:text-5xl lg:text-balance">
-                          What you will learn
+                          What you will also learn
                         </p>
                         <p className="mt-6 text-lg leading-8 text-gray-600">
             Our comprehensive curriculum covers everything you need to build, grow, and monetize your WhatsApp presence from scratch.

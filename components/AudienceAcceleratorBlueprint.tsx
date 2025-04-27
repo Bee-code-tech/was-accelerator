@@ -24,13 +24,13 @@ const features = [
   {
     name: 'Rapid Audience Growth',
     description:
-      'Grow your WhatsApp audience to 2,000+ status views  under 30 days using powerful organic strategies—no referrals or contact gain needed.',
+      'Grow your WhatsApp audience to 2,000+ status views  under 30 days using powerful organic strategies — no referrals or contact gain needed.',
     icon: ChartBarIcon,
   },
   {
     name: 'Blueprint Monetization',
     description:
-      'Learn exactly how to monetize your audience and make over 230k monthly with your WhatsApp—using simple but effective marketing tricks.',
+      'Learn exactly how to monetize your audience and make over 230k monthly with your WhatsApp — using simple but effective marketing tricks.',
     icon: CurrencyDollarIcon,
   },
   {
@@ -79,7 +79,7 @@ export default function AudienceAcceleratorBlueprint() {
             Introducing the Audience Accelerator Blueprint
           </p>
           <p className="mt-6 text-lg text-gray-600">
-            This powerful system shows you exactly how to build, grow, and monetize your WhatsApp audience fast — without spam, stress or spending on ads.
+            This powerful system shows you exactly how to build, grow, and monetize your WhatsApp audience fast - without spam, stress or spending on ads.
           </p>
         </motion.div>
 

@@ -90,9 +90,9 @@ export default function TestimonialsAndResults() {
             {/* <h3 className="text-2xl font-bold text-gray-800 mb-4">Results Achieved</h3> */}
             <ul className="list-disc pl-5 space-y-3 text-gray-700">
               <li>I drove 22,000+ leads across Nigeria through more than 30 FILLED and ACTIVE whatsApp groups in just one month.</li>
-              <li>I also grew my academy's WhatsApp channel from 0 - 10,000+ followers in 6 months as displayed.</li>
-              <li>I grew my business WhatsApp channel from 0 - 6,000+ followers in 6 months as displayed.</li>
-              <li>The screenshot on the flyer tells the story - when you're learning from me, gaining value is inevitable.</li>
+              <li>I grew my academy's WhatsApp channel from 0 - 10,000+ followers in 6 months as displayed.</li>
+              <li>I also grew my business WhatsApp channel from 0 - 6,000+ followers in 6 months as displayed.</li>
+              <li>The screenshots on the flyers tell the story - when you're learning from me, gaining value is inevitable.</li>
          
             </ul>
           </motion.div>

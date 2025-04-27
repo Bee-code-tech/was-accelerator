@@ -8,15 +8,14 @@ import { Logo } from './Logo';
 
 const navigation = {
   company: [
-    { name: 'About Us', href: '#' },
-    { name: 'Blog', href: '#' },
-    { name: 'Press', href: '#' },
-    { name: 'Jobs', href: '#' },
+    { name: 'About Me', href: '#about' },
+    { name: 'Testimonials', href: '#testimonials' },
+    { name: 'FAQs', href: '#faq' },
+    { name: 'Course Outlines', href: '#outline' },
   ],
   legal: [
-    { name: 'Terms of Service', href: '#' },
-    { name: 'Privacy Policy', href: '#' },
-    { name: 'License', href: '#' },
+    { name: 'My Results', href: '#results' },
+    { name: 'Join 500+ others', href: '#offers' },
   ],
   social: [
     {
@@ -31,12 +30,12 @@ const navigation = {
     },
     {
       name: 'LinkedIn',
-      href: 'https://www.linkedin.com/',
+      href: '',
       icon: BsLinkedin,
     },
     {
       name: 'Twitter',
-      href: 'https://www.twitter.com/',
+      href: '',
       icon: BsTwitter,
     },
   ],
@@ -45,7 +44,7 @@ const navigation = {
 export default function Footer() {
   return (
     <footer className="bg-white">
-      <div className="mx-auto max-w-7xl px-6 py-24 sm:px-6 sm:py-32 lg:px-8 lg:py-24">
+      <div className="mx-auto max-w-7xl px-6 py-4 sm:px-6 sm:py-32 lg:px-8 lg:py-24">
         <div className="xl:grid xl:grid-cols-3 xl:gap-8">
           <div className="space-y-8">
             <Logo />

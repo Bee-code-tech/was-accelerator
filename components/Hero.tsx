@@ -22,7 +22,7 @@ const Hero = () => {
   const countdownEndTime = new Date('2025-05-01T00:00:00').getTime();
 
   const [offerTitle] = useState('Get 6 months free - Limited Time Offer'); 
-  const [offerDescription] = useState('Join over 500 TOP WhatsApp marketers who are generating 230k+ monthly by monetizing their audience - without referrals, contact gain, bulk messages, or paid advertising.');
+  const [offerDescription] = useState('Join over 500 TOP WhatsApp marketers who are generating 230k+ monthly by monetizing their audience - without referrals, contact gain, bulk messaging, or paid advertising.');
 
   // Countdown Timer Logic
   useEffect(() => {
@@ -87,53 +87,6 @@ const Hero = () => {
       >
         {offerDescription}
       </motion.p>
-
-      {/* Buttons */}
-      {/* <motion.div
-        variants={heroVariants}
-        initial="hidden"
-        animate="visible"
-        transition={{ duration: 1, ease: 'easeOut', delay: 0.3 }} // Added delay
-        className="mt-10 flex flex-col lg:flex-row justify-center gap-6 z-10"
-      >
-              <Button color='blue' href="/register">
-                  <BsWhatsapp className="text-xl" />
-                   <span className="ml-2">Contact Us</span>
-              </Button>
-        <Button href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" variant="outline">
-          <User2 className="text-md" />
-          <span className="ml-2">About Us</span>
-        </Button>
-      </motion.div> */}
-
-      {/* Countdown Timer */}
-      {/* <motion.div
-        variants={heroVariants}
-        initial="hidden"
-        animate="visible"
-        transition={{ duration: 1, ease: 'easeOut', delay: 0.4 }} // Added delay
-        className="mt-10 p-8  text-blue-500  max-w-[400px] mx-auto z-10"
-      >
-        <h3 className="font-semibold text-xl mb-4"> Exlusive Discount (30% off) </h3>
-        <div className="flex justify-center gap-4 bg-blue-100 border border-blue-500 py-3 rounded-lg text-blue-500">
-          <div className="text-center">
-            <div className="text-3xl font-bold">{formatTime(remainingTime).split(':')[0]}</div>
-            <div className="text-lg">Days</div>
-          </div>
-          <div className="text-center">
-            <div className="text-3xl font-bold">{formatTime(remainingTime).split(':')[1]}</div>
-            <div className="text-lg">Hours</div>
-          </div>
-          <div className="text-center">
-            <div className="text-3xl font-bold">{formatTime(remainingTime).split(':')[2]}</div>
-            <div className="text-lg">Minutes</div>
-          </div>
-          <div className="text-center">
-            <div className="text-3xl font-bold">{formatTime(remainingTime).split(':')[3]}</div>
-            <div className="text-lg">Seconds</div>
-          </div>
-        </div>
-      </motion.div> */}
     </Container>
   );
 };
