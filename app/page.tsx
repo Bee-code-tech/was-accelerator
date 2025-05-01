@@ -5,7 +5,7 @@ import FAQSection from "@/components/FAQSection";
 import Hero  from "@/components/Hero";
 import Learn from "@/components/Learn";
 import MasterclassCTA from "@/components/MasterClassCTA";
-import TestimonialsAndResults from "@/components/TestimonialsAndResults";
+import Results from "@/components/Results";
 import TestimonialSection from "@/components/TestimonialSection";
 import VideoProofSection from "@/components/VideoProofSection";
 
@@ -14,7 +14,7 @@ export default function Home() {
     <>
       <Hero />
       <BioSection />
-      <TestimonialsAndResults />
+      <Results />
       <VideoProofSection />
       <AudienceAcceleratorBlueprint />
       <Learn />

@@ -1,61 +1,103 @@
 'use client'
 import { motion } from 'framer-motion';
 import { Container } from '@/components/Container';
-import { BsLinkedin, BsTwitter, BsInstagram, BsWhatsapp, BsFacebook } from 'react-icons/bs';
-import Image from 'next/image'; 
-
+import Image from 'next/image';
+import { useEffect, useState } from 'react';
+import { BsWhatsapp, BsFacebook, BsInstagram } from 'react-icons/bs';
 import Headline from './Headline';
+import { client } from '@/lib/sanity';
+import imageUrlBuilder from '@sanity/image-url';
 
-// Animation Variants for Framer Motion
+const builder = imageUrlBuilder(client);
+
 const bioVariants = {
   hidden: { opacity: 0, x: -50 },
   visible: { opacity: 1, x: 0, transition: { duration: 1, ease: 'easeOut' } },
 };
 
+const SkeletonLoader = () => (
+  <div className="flex flex-col py-12 lg:flex-row items-center w-full mx-auto max-w-5xl justify-between gap-10">
+    <div className="lg:w-1/2 mt-6 lg:mt-0 flex justify-center">
+      <div className="bg-gray-300 animate-pulse rounded-lg w-[75%] h-[500px]" />
+    </div>
+    <div className="lg:w-1/2 text-center lg:text-left">
+      <div className="bg-gray-300 animate-pulse h-8 w-32 mb-4 rounded" />
+      <div className="bg-gray-300 animate-pulse h-6 w-48 mb-6 rounded" />
+      <div className="flex gap-4 mt-4 items-center justify-center lg:justify-start">
+        <div className="bg-gray-300 animate-pulse w-8 h-8 rounded-full" />
+        <div className="bg-gray-300 animate-pulse w-8 h-8 rounded-full" />
+        <div className="bg-gray-300 animate-pulse w-8 h-8 rounded-full" />
+      </div>
+    </div>
+  </div>
+);
+
+interface BioData {
+  image?: { asset?: any };
+  name?: string;
+  title?: string;
+  description?: string;
+  socialLinks?: { platform: string; url: string }[];
+}
+
 const BioSection = () => {
+  const [bioData, setBioData] = useState<BioData | null>(null);
+
+  useEffect(() => {
+    client
+      .fetch(`*[_type == "bio"][0]`)
+      .then((data) => setBioData(data))
+      .catch(console.error);
+  }, []);
+
+  if (!bioData) {
+    return <SkeletonLoader />;
+  }
+
+  // Function to get image URL from Sanity
+  const imageUrl = bioData?.image?.asset ? builder.image(bioData.image.asset).url() : '';
+
   return (
-    <Container className=" pb-16 text-center lg:pt-32 relative" id='about'>
-      <Headline title='Meet Your Instructor' />
-      
-      {/* Bio Section */}
+    <Container className="pb-16 text-center lg:pt-32 relative" id="about">
+      <Headline title="Meet Your Instructor" />
+
       <motion.div
         variants={bioVariants}
         initial="hidden"
         whileInView="visible"
-        viewport={{ once: true, amount: 0.2 }} 
+        viewport={{ once: true, amount: 0.2 }}
         className="flex flex-col lg:flex-row items-center justify-between gap-10"
       >
-        {/* Left Side - Client Image */}
         <div className="lg:w-1/2 mt-6 lg:mt-0 flex justify-center">
-          <Image
-            src="/chimex.jpg" 
-            alt="Chima Ugbaja E."
-            width={300}
-            height={300}
-            className="rounded-lg w-full lg:w-[75%] shadow-lg"
-          />
+          {imageUrl ? (
+            <Image
+              src={imageUrl}
+              alt={bioData?.name || 'Instructor Image'}
+              width={300}
+              height={300}
+              className="rounded-lg w-full lg:w-[75%] shadow-lg"
+            />
+          ) : (
+            <div className="bg-gray-300 animate-pulse rounded-lg w-[75%] h-72" />
+          )}
         </div>
 
-        {/* Right Side - Client Information */}
         <div className="lg:w-1/2 text-center lg:text-left">
-          <h2 className="font-display text-2xl lg:text-4xl font-bold text-slate-900">Chima Ugbaja E.</h2>
+          <h2 className="font-display text-2xl lg:text-4xl font-bold text-slate-900">
+            {bioData?.name || 'Loading...'}
+          </h2>
           <p className="mt-4 text-md text-slate-700">
-            CEO of CHIMEXSUB LIMITED, SCHOLARSPRO ACADEMY, and a Lead Generation Expert.
-            <br />
-            A passionate WhatsApp marketer, I’ve helped over 500+ marketers grow and monetize their WhatsApp audience.
+            {bioData?.description || 'Loading...'}
           </p>
 
-          {/* Social Links */}
           <div className="flex gap-4 mt-4 items-center justify-center lg:justify-start">
-            <a href="https://whatsapp.com/channel/0029Vaj6EiFKAwEekrenp82k" target="_blank" className="text-blue-600">
-              <BsWhatsapp size={24} />
-            </a>
-            <a href="https://www.facebook.com/share/1BPRfdSU7S/?mibextid=wwXIfr" target="_blank" className="text-blue-600">
-              <BsFacebook size={24} />
-            </a>
-            <a href="https://www.instagram.com/chimexsub11?igsh=MXB0bmV4OGowY2tpNw%3D%3D&utm_source=qr" target="_blank" className="text-blue-600">
-              <BsInstagram size={24} />
-            </a>
+            {bioData?.socialLinks?.map((link) => (
+              <a key={link.platform} href={link.url} target="_blank" className="text-blue-600">
+                {link.platform === 'whatsapp' && <BsWhatsapp size={24} />}
+                {link.platform === 'facebook' && <BsFacebook size={24} />}
+                {link.platform === 'instagram' && <BsInstagram size={24} />}
+              </a>
+            ))}
           </div>
         </div>
       </motion.div>

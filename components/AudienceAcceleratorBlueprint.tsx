@@ -7,19 +7,12 @@ import {
 } from '@heroicons/react/24/outline'
 import { motion } from 'framer-motion'
 import Carousel from './Carousel'
+import { useEffect, useState } from 'react';
+import { client } from '@/lib/sanity';
+import imageUrlBuilder from '@sanity/image-url';
 
-const resultImages = [
-  {
-    src: "/was.jpg",
-    alt: "N-WAAM Blueprint"
-  },
-  {
-    src: "/bonus1.jpg",
-    alt: "Fast Action Bonuses"
-  },
- 
-];
 
+const builder = imageUrlBuilder(client);
 const features = [
   {
     name: 'Rapid Audience Growth',
@@ -62,6 +55,26 @@ const itemVariants = {
 }
 
 export default function AudienceAcceleratorBlueprint() {
+  interface ResultData {
+      images?: { asset: any; description?: string }[];
+      list?: string[];
+    }
+  
+    const [resultData, setResultData] = useState<ResultData | null>(null);
+  
+    useEffect(() => {
+      client
+        .fetch(`*[_type == "blueprint"][0]`)
+        .then((data) => setResultData(data))
+        .catch(console.error);
+    }, []);
+  
+
+    const resultImages = resultData?.images?.map((img) => ({
+    src: builder.image(img.asset).url(),
+    alt: img.description || 'Image description'
+  })) || [];
+  
   return (
     <div className="bg-white py-14 sm:py-32" id='outline'>
       <motion.div

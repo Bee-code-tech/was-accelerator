@@ -1,7 +1,8 @@
-"use client";
+'use client';
 
 import React, { useState, useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
+import { client } from '@/lib/sanity';
 import { ClockIcon, BanknotesIcon, SparklesIcon } from '@heroicons/react/24/outline';
 
 interface TimeRemaining {
@@ -13,30 +14,33 @@ interface TimeRemaining {
 }
 
 const CountdownSection = () => {
-  // Set your offer details here
-  const originalPrice = "₦10,000";
-  const discountedPrice = "₦5,000";
-  const endDateRef = useRef(new Date(Date.now() + 24 * 60 * 60 * 1000).toISOString()); 
-  const buttonText = "Reserve Your Spot Now";
-  const buttonLink = "https://wa.link/ltfzo8"; 
-
-  // Time remaining state
   const [timeRemaining, setTimeRemaining] = useState<TimeRemaining>({
     days: 0,
     hours: 0,
     minutes: 0,
     seconds: 0,
-    total: 0
+    total: 0,
   });
   
-  // Is countdown active
   const [isActive, setIsActive] = useState(true);
+  const [countdownData, setCountdownData] = useState<any>(null);
 
-  // Calculate time remaining
+  // Fetch the countdown data from Sanity
   useEffect(() => {
+    client
+      .fetch(`*[_type == "countdown"][0]`)
+      .then((data) => setCountdownData(data))
+      .catch(console.error);
+  }, []);
+
+  useEffect(() => {
+    if (!countdownData) return;
+
+    const endDateRef = countdownData.endDate;
+    
     const calculateTimeRemaining = (): TimeRemaining => {
       const now = new Date();
-      const targetDate = new Date(endDateRef.current);
+      const targetDate = new Date(endDateRef);
       const timeDifference = targetDate.getTime() - now.getTime();
       
       // Check if countdown is over
@@ -59,38 +63,34 @@ const CountdownSection = () => {
         total: timeDifference
       };
     };
-    
+
     // Initial calculation
     setTimeRemaining(calculateTimeRemaining());
-    
+
     // Set up interval for countdown
     const interval = setInterval(() => {
       const remaining = calculateTimeRemaining();
       setTimeRemaining(remaining);
       
-      // Clear interval when countdown is over
       if (remaining.total <= 0) {
         clearInterval(interval);
         setIsActive(false);
       }
     }, 1000);
-    
-    // Clean up
-    return () => clearInterval(interval);
-  }, []); // Empty dependency array - only run once on mount
 
-  // Format time with leading zeros
+    return () => clearInterval(interval);
+  }, [countdownData]);
+
   const formatTime = (value: number): string => {
     return value < 10 ? `0${value}` : `${value}`;
   };
 
-  // Determine if we need to show days
   const showDays = timeRemaining.days > 0;
 
   return (
-    <div className="py-10 md:py-16" id='offers'>
+    <div className="py-10 md:py-16" id="offers">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
@@ -117,10 +117,10 @@ const CountdownSection = () => {
           <div className="px-6 py-8 sm:px-10 text-center">
             <div className="mb-6">
               <span className="inline-block text-xl line-through text-gray-400 mr-3">
-                {originalPrice}
+                {countdownData?.originalPrice}
               </span>
               <span className="inline-block text-3xl sm:text-4xl font-bold text-blue-700">
-                {discountedPrice}
+                {countdownData?.discountedPrice}
               </span>
               <div className="mt-2 inline-block bg-green-100 text-green-800 text-sm font-medium px-3 py-1 rounded-full">
                 {showDays ? "Limited Time Discount!" : "Discount Valid Today Only!"}
@@ -138,7 +138,6 @@ const CountdownSection = () => {
                 </div>
                 
                 <div className="flex justify-center items-center space-x-2 sm:space-x-4">
-                  {/* Days - only shown when needed */}
                   {showDays && (
                     <>
                       <div className="bg-gray-100 rounded-lg p-2 sm:p-3 min-w-16 text-center">
@@ -150,8 +149,7 @@ const CountdownSection = () => {
                       <div className="text-xl sm:text-2xl font-bold text-gray-400">:</div>
                     </>
                   )}
-                  
-                  {/* Hours */}
+
                   <div className="bg-gray-100 rounded-lg p-2 sm:p-3 min-w-16 text-center">
                     <div className="text-2xl sm:text-3xl font-bold text-blue-700">
                       {formatTime(timeRemaining.hours)}
@@ -159,8 +157,7 @@ const CountdownSection = () => {
                     <div className="text-xs text-gray-500 uppercase">Hours</div>
                   </div>
                   <div className="text-xl sm:text-2xl font-bold text-gray-400">:</div>
-                  
-                  {/* Minutes */}
+
                   <div className="bg-gray-100 rounded-lg p-2 sm:p-3 min-w-16 text-center">
                     <div className="text-2xl sm:text-3xl font-bold text-blue-700">
                       {formatTime(timeRemaining.minutes)}
@@ -168,8 +165,7 @@ const CountdownSection = () => {
                     <div className="text-xs text-gray-500 uppercase">Minutes</div>
                   </div>
                   <div className="text-xl sm:text-2xl font-bold text-gray-400">:</div>
-                  
-                  {/* Seconds */}
+
                   <div className="bg-gray-100 rounded-lg p-2 sm:p-3 min-w-16 text-center">
                     <div className="text-2xl sm:text-3xl font-bold text-blue-700">
                       {formatTime(timeRemaining.seconds)}
@@ -179,8 +175,8 @@ const CountdownSection = () => {
                 </div>
               </div>
             )}
-            
-            {/* Expired Message - shown when countdown reaches zero */}
+
+            {/* Expired Message */}
             {!isActive && (
               <div className="mb-8 p-4 bg-red-50 text-red-700 rounded-lg">
                 <p className="font-medium">This offer has expired!</p>
@@ -188,13 +184,13 @@ const CountdownSection = () => {
               </div>
             )}
             
-            {/* Call to Action Button */}
+            {/* CTA Button */}
             <motion.div 
               whileHover={{ scale: 1.03 }}
               whileTap={{ scale: 0.97 }}
             >
               <a 
-                href={buttonLink}
+                href={countdownData?.buttonLink}
                 className={`block w-full sm:w-auto sm:mx-auto sm:inline-block bg-gradient-to-r ${
                   isActive 
                     ? "from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700" 
@@ -203,18 +199,10 @@ const CountdownSection = () => {
               >
                 <div className="flex items-center justify-center">
                   <BanknotesIcon className="h-5 w-5 mr-2" />
-                  {isActive ? buttonText : "Contact Us"}
+                  {isActive ? countdownData?.buttonText : "Contact Us"}
                 </div>
               </a>
             </motion.div>
-            
-            {/* Trust Badge */}
-            <div className="mt-6 flex items-center justify-center text-sm text-gray-500">
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-green-500 mr-1" viewBox="0 0 20 20" fill="currentColor">
-                <path fillRule="evenodd" d="M2.166 4.999A11.954 11.954 0 0010 1.944 11.954 11.954 0 0017.834 5c.11.65.166 1.32.166 2.001 0 5.225-3.34 9.67-8 11.317C5.34 16.67 2 12.225 2 7c0-.682.057-1.35.166-2.001zm11.541 3.708a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-              </svg>
-              <span>100% Secure Payment</span>
-            </div>
           </div>
         </motion.div>
       </div>

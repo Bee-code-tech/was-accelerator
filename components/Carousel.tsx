@@ -75,7 +75,7 @@ const Carousel: React.FC<CarouselProps> = ({
   // Load image dimensions when current image changes
   useEffect(() => {
     const img = new window.Image();
-    img.src = images[currentIndex].src;
+    img.src = images[currentIndex]?.src;
     
     img.onload = () => {
       setImageDimensions({
