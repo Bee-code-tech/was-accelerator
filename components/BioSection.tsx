@@ -54,7 +54,6 @@ const BioSection = () => {
     return <SkeletonLoader />;
   }
 
-  // Function to get image URL from Sanity
   const imageUrl = bioData?.image?.asset ? builder.image(bioData.image.asset).url() : '';
 
   return (
