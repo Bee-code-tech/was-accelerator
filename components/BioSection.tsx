@@ -1,5 +1,5 @@
 'use client'
-import { motion } from 'framer-motion';
+import { motion, Variants } from 'framer-motion';
 import { Container } from '@/components/Container';
 import Image from 'next/image';
 import { useEffect, useState } from 'react';
@@ -10,9 +10,16 @@ import imageUrlBuilder from '@sanity/image-url';
 
 const builder = imageUrlBuilder(client);
 
-const bioVariants = {
+const bioVariants : Variants = {
   hidden: { opacity: 0, x: -50 },
-  visible: { opacity: 1, x: 0, transition: { duration: 1, ease: 'easeOut' } },
+  visible: { 
+    opacity: 1, 
+    x: 0, 
+    transition: { 
+      duration: 1, 
+      ease: "easeOut" 
+    } 
+  },
 };
 
 const SkeletonLoader = () => (

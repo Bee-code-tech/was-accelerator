@@ -1,5 +1,5 @@
 'use client'
-import { motion } from 'framer-motion';
+import { motion, Variants } from 'framer-motion';
 import { Container } from '@/components/Container';
 import Carousel from './Carousel';
 import { client } from '@/lib/sanity';
@@ -8,7 +8,7 @@ import imageUrlBuilder from '@sanity/image-url';
 
 const builder = imageUrlBuilder(client);
 
-const itemVariants = {
+const itemVariants: Variants = {
   hidden: { opacity: 0, y: 30 },
   show: { opacity: 1, y: 0, transition: { duration: 0.6, ease: 'easeOut' } },
 };

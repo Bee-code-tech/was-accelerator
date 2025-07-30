@@ -1,5 +1,5 @@
 'use client'
-import { motion } from 'framer-motion';
+import { motion, Variants } from 'framer-motion';
 import { Button } from '@/components/Button';
 import { Container } from '@/components/Container';
 import { useEffect, useState } from 'react';
@@ -7,7 +7,7 @@ import { BsWhatsapp } from 'react-icons/bs';
 import { User2, UserIcon } from 'lucide-react';
 
 // Animation Variants for Framer Motion
-const heroVariants = {
+const heroVariants: Variants = {
   hidden: { opacity: 0, y: 50 },
   visible: { opacity: 1, y: 0, transition: { duration: 1, ease: 'easeOut' } },
 };

@@ -1,15 +1,15 @@
 'use client'
-import { motion } from 'framer-motion';
+import { motion, Variants } from 'framer-motion';
 import { useEffect, useState } from 'react';
 
 export default function MasterclassCTA() {
   // Animation Variants for Framer Motion
-  const fadeInVariants = {
+  const fadeInVariants: Variants = {
     hidden: { opacity: 0 },
     visible: { opacity: 1, transition: { duration: 1, ease: 'easeOut' } },
   };
 
-  const slideUpVariants = {
+  const slideUpVariants : Variants = {
     hidden: { opacity: 0, y: 50 },
     visible: { opacity: 1, y: 0, transition: { duration: 3, ease: 'easeOut' } },
   };
