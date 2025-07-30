@@ -25,7 +25,7 @@ const CountdownSection = () => {
   const [isActive, setIsActive] = useState(true);
   const [countdownData, setCountdownData] = useState<any>(null);
 
-  // Fetch the countdown data from Sanity
+  // Fetch the countdown data from Sanity ji
   useEffect(() => {
     client
       .fetch(`*[_type == "countdown"][0]`)
