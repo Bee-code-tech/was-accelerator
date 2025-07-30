@@ -104,7 +104,7 @@ const CountdownSection = () => {
               <SparklesIcon className="h-6 w-6 text-yellow-300 ml-2" />
             </div>
             <h2 className="text-2xl sm:text-3xl font-extrabold mb-2">
-              Save 50% {showDays ? "For A Limited Time" : "Today Only"}!
+              Save 85% {showDays ? "For A Limited Time" : "Today Only"}!
             </h2>
             <p className="text-blue-100">
               {showDays 
