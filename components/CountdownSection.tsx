@@ -214,12 +214,8 @@ const CountdownSection = () => {
                 className="mb-8 p-4 bg-gradient-to-r from-orange-100 to-red-100 border border-orange-300 text-orange-700 rounded-lg"
               >
                 <div className="flex items-center justify-center mb-2">
-                  <motion.div
-                    animate={{ scale: [1, 1.2, 1] }}
-                    transition={{ duration: 1, repeat: Infinity }}
-                    className="w-3 h-3 bg-orange-500 rounded-full mr-3"
-                  ></motion.div>
-                  <p className="font-bold text-lg">⚡ {countdownData.expiredMessage}</p>
+                  
+                  <p className="font-bold text-lg"> {countdownData.expiredMessage}</p>
                 </div>
               </motion.div>
             )}
