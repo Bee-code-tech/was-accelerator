@@ -53,7 +53,7 @@ const CountdownSection = () => {
 
   // Simulated countdown - resets on every page refresh (3 minutes = 180 seconds)
   useEffect(() => {
-    let remainingTime = 180; // 3 minutes in seconds
+    let remainingTime = 3600; 
     setIsActive(true);
     setIsExpired(false);
 

@@ -40,10 +40,18 @@ export default {
       description: 'Rest of the description text after the highlighted text',
     },
     {
-      name: 'whatsappLink',
-      title: 'WhatsApp Group Link',
+      name: 'buttonText',
+      title: 'Button Text',
+      type: 'string',
+      description:
+        'Button text - include "WhatsApp" for green button or "Telegram" for blue button',
+      initialValue: 'Join WhatsApp Group Now',
+    },
+    {
+      name: 'buttonLink',
+      title: 'Button Link',
       type: 'url',
-      description: 'Full WhatsApp group invitation link',
+      description: 'WhatsApp/Telegram group invitation link',
     },
     {
       name: 'membersCount',
@@ -66,5 +74,5 @@ export default {
       description: 'Message when countdown expires',
       initialValue: '🔔 Last chance to join!',
     },
-  ]
+  ],
 }
