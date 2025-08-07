@@ -20,12 +20,12 @@ const navigation = {
   social: [
     {
       name: 'Facebook',
-      href: 'https://www.facebook.com/',
+      href: '',
       icon: BsFacebook,
     },
     {
       name: 'Instagram',
-      href: 'https://www.instagram.com/',
+      href: '',
       icon: BsInstagram,
     },
     {
@@ -53,10 +53,10 @@ export default function Footer() {
             </p>
             <div className="flex gap-x-6">
               {navigation.social.map((item) => (
-                <a key={item.name} href={item.href} className="text-gray-600 hover:text-gray-800">
+                <div key={item.name}  className="text-gray-600 hover:text-gray-800">
                   <span className="sr-only">{item.name}</span>
                   <item.icon aria-hidden="true" className="h-6 w-6" />
-                </a>
+                </div>
               ))}
             </div>
           </div>

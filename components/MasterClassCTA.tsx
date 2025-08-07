@@ -71,12 +71,11 @@ export default function MasterclassCTA() {
             transition={{ delay: 0.6, duration: 1 }}
             className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-x-6 gap-y-4"
           >
-            <a
-              href="https://wa.link/k5a3zt"
+            <span
               className="rounded-md bg-white px-6 py-3 text-sm font-semibold text-gray-900 shadow-sm hover:bg-gray-100 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
             >
               Reserve Your Spot Now
-            </a>
+            </span>
            
           </motion.div>
 
