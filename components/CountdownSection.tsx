@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { client } from '@/lib/sanity';
 import { ClockIcon, BanknotesIcon, SparklesIcon } from '@heroicons/react/24/outline';
+import { useRouter } from 'next/navigation';
 
 interface TimeRemaining {
   hours: number;
@@ -33,6 +34,7 @@ const CountdownSection = () => {
   const [isActive, setIsActive] = useState(true);
   const [countdownData, setCountdownData] = useState<CountdownData | null>(null);
   const [isExpired, setIsExpired] = useState(false);
+  const router = useRouter()
 
   // Fetch the countdown data from Sanity (excluding countdown duration)
   useEffect(() => {
@@ -97,6 +99,15 @@ const CountdownSection = () => {
 
   const formatTime = (value: number): string => {
     return value < 10 ? `0${value}` : `${value}`;
+  };
+
+  const handleCtaClick = (url: string) => {
+    if (typeof window !== "undefined" && (window as any).fbq) {
+      (window as any).fbq("track", "Lead");
+    }
+    setTimeout(() => {
+      router.push(url);
+    }, 300);
   };
 
   if (!countdownData) {
@@ -224,9 +235,9 @@ const CountdownSection = () => {
             <motion.div 
               whileHover={{ scale: 1.03 }}
               whileTap={{ scale: 0.97 }}
+              onClick={() => handleCtaClick(countdownData.buttonLink)}
             >
-              <a 
-                href={countdownData.buttonLink}
+              <div
                 className={`block w-full sm:w-auto sm:mx-auto sm:inline-block ${
                   isActive 
                     ? "bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 shadow-lg hover:shadow-xl" 
@@ -244,7 +255,7 @@ const CountdownSection = () => {
                     →
                   </motion.div>
                 </div>
-              </a>
+              </div>
             </motion.div>
 
           </div>
