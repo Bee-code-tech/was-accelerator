@@ -60,7 +60,7 @@ export default function RootLayout({
           'https://connect.facebook.net/en_US/fbevents.js');
           fbq('init', '24551015417870715');
           fbq('track', 'PageView');
-          fbq('track', 'Lead');
+          fbq('track', 'lead');
                   `,
       }}
     ></script>
